@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        jdk 'JDK21'
-        maven 'Maven3'
-    }
-
     stages {
 
         stage('Clone') {
@@ -17,11 +12,13 @@ pipeline {
 
         stage('Build') {
             steps {
+                sh 'java -version'
+                sh 'mvn -version'
                 sh 'mvn clean package -DskipTests'
             }
         }
 
-        stage('Docker Image') {
+        stage('Docker Build') {
             steps {
                 sh 'docker build -t springbootapi .'
             }
@@ -30,8 +27,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                docker rm -f springbootapi-container || true
-                docker run -d --name springbootapi-container -p 9090:5000 springbootapi
+                    docker rm -f springbootapi-container || true
+                    docker run -d --name springbootapi-container -p 9090:5000 springbootapi
                 '''
             }
         }
