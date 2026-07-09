@@ -26,7 +26,27 @@ pipeline {
                 sh 'mvn clean package -DskipTests'
             }
         }
-
+        
+        stage('SonarQube Analysis') {
+    steps {
+        withSonarQubeEnv('SonarQube') {
+            sh '''
+            mvn sonar:sonar \
+              -Dsonar.projectKey=springbootapi \
+              -Dsonar.projectName=springbootapi
+            '''
+        }
+    }
+}
+        stage('Quality Gate') {
+    steps {
+        timeout(time: 5, unit: 'MINUTES') {
+            waitForQualityGate abortPipeline: true
+        }
+    }
+}
+        
+        
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t springbootapi:v1 .'
