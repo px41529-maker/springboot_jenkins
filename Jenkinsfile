@@ -49,7 +49,7 @@ pipeline {
 
         stage('Push Image') {
             steps {
-                sh 'docker push springbootapi:vi'
+                sh 'docker push springbootapi:v1'
             }
         }
 
