@@ -29,7 +29,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t prakash200407/springbootapi:v1 .'
+                sh 'docker build -t springbootapi:v1 .'
             }
         }
 
