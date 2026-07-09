@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = "prakash200407/springboot_repository"
+        IMAGE_NAME = "prakash200407/springbootapi"
         IMAGE_TAG = "v1"
         CONTAINER_NAME = "springbootapi-container"
     }
@@ -49,18 +49,18 @@ pipeline {
 
         stage('Push Image') {
             steps {
-                sh 'docker push ${IMAGE_NAME}:${IMAGE_TAG}'
+                sh 'docker push $springbootapi:vi'
             }
         }
 
         stage('Deploy') {
             steps {
                 sh '''
-                    docker rm -f ${CONTAINER_NAME} || true
+                    docker rm -f springbootapi-container || true
                     docker run -d \
-                      --name ${CONTAINER_NAME} \
+                      --name springbootapi-container \
                       -p 9000:5000 \
-                      ${IMAGE_NAME}:${IMAGE_TAG}
+                      springbootapi:v1
                 '''
             }
         }
