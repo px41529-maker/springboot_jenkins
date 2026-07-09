@@ -32,8 +32,8 @@ pipeline {
         withSonarQubeEnv('SonarQube') {
             sh '''
             mvn sonar:sonar \
-              -Dsonar.projectKey=springbootapi \
-              -Dsonar.projectName=springbootapi
+              -Dsonar.projectKey=sonar \
+              -Dsonar.projectName=sonar
             '''
         }
     }
