@@ -5,6 +5,10 @@ pipeline {
         jdk 'JDK21'
         maven 'Maven3'
     }
+ environment {
+        IMAGE_NAME = "prakash200407/springbootapi"
+        IMAGE_TAG = "v1"
+    }
 
     stages {
 
