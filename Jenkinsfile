@@ -49,7 +49,10 @@ pipeline {
 
         stage('Push Image') {
             steps {
-                sh 'docker push springbootapi:v1'
+                sh '''
+                docker tag prakash200407/springbootapi:v1 prakash200407/springboot_repository:latest
+                docker push prakash200407/springboot_repository:latest
+                '''
             }
         }
 
