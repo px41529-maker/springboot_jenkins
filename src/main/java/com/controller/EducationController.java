@@ -18,7 +18,7 @@ public class EducationController {
     
     @GetMapping("/hi")
     public String m1() {
-    	return "welcome to 21";
+    	return "Prakash welcome to springboot ";
     }
 
     // Add Student
