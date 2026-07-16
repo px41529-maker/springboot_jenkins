@@ -13,7 +13,7 @@ pipeline {
         
         AWS_DEFAULT_REGION = "ap-south-1"
 
-        CLUSTER_NAME = "springboot-cluster"
+        CLUSTER_NAME = "demo-cluster"
     }
 
     stages {
