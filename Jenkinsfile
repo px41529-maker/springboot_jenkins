@@ -53,7 +53,7 @@ pipeline {
             }
         }
 
-        stage('Docker Login') {
+      /*  stage('Docker Login') {
             steps {
                 withCredentials([usernamePassword(
                     credentialsId: 'dockerhub1',
@@ -75,7 +75,7 @@ pipeline {
                 '''
             }
         }
-
+*/
         stage('Deploy') {
             steps {
                 sh '''
