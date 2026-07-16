@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: springboot-deployment
+  labels:
+    app: springboot
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: springboot
+
+  template:
+    metadata:
+      labels:
+        app: springboot
+
+    spec:
+      containers:
+      - name: springboot
+
+        image: prakash200407/springbootapi:v1
+
+        imagePullPolicy: Always
+
+        ports:
+        - containerPort: 5000
