@@ -6,7 +6,7 @@ module "eks" {
   cluster_name    = "demo-cluster"
   cluster_version = "1.34"
 
-  endpoint_public_access = true
+cluster_endpoint = true
 
   vpc_id     = data.aws_vpc.default.id
   subnet_ids = data.aws_subnets.default.ids
