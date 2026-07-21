@@ -57,7 +57,7 @@ pipeline {
             }
         }
 
-     /*  stage('Docker Login') {
+     stage('Docker Login') {
             steps {
                 withCredentials([usernamePassword(
                     credentialsId: 'dockerhub1',
@@ -79,8 +79,8 @@ pipeline {
                 '''
             }
         }
-*/
-       /* stage('Deploy') {
+
+        stage('Deploy') {
             steps {
                 sh '''
                     docker rm -f springbootapi-container || true
@@ -91,7 +91,7 @@ pipeline {
                 '''
             }
         }
-        */
+        
         stage('Terraform Init') {
 
             steps {
