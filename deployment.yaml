@@ -19,8 +19,9 @@ spec:
         app: springboot
 
     spec:
-      containers:
-      - name: springboot
+    containers:
+  - name: springboot
+    image: prakash200407/springboot_repository:latest
 
        image: prakash200407/springboot_repository:latest
         imagePullPolicy: Always
