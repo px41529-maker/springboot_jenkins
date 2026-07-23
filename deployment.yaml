@@ -22,8 +22,7 @@ spec:
       containers:
       - name: springboot
 
-        image: prakash200407/springbootapi:latest
-
+        image: image: prakash200407/springboot_repository:latest
         imagePullPolicy: Always
 
         ports:
