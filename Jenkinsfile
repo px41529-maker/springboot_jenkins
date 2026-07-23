@@ -53,7 +53,7 @@ pipeline {
    */     
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t springbootapi:latest .'
+                sh 'docker build -t prakash200407/springboot_repository:latest .'
             }
         }
 
@@ -74,7 +74,6 @@ pipeline {
         stage('Push Image') {
             steps {
                 sh '''
-                docker tag prakash200407/springbootapi:latest prakash200407/springboot_repository:latest
                 docker push prakash200407/springboot_repository:latest
                 '''
             }
