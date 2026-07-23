@@ -22,7 +22,7 @@ spec:
       containers:
       - name: springboot
 
-        image: prakash200407/springbootapi:v1
+        image: prakash200407/springbootapi:latest
 
         imagePullPolicy: Always
 
