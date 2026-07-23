@@ -31,7 +31,7 @@ pipeline {
             }
         }
         
-       /* stage('SonarQube Analysis') {
+       stage('SonarQube Analysis') {
     steps {
         withSonarQubeEnv('SonarQube') {
             sh '''
@@ -50,7 +50,7 @@ pipeline {
     }
 }
         
-   */     
+     
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t prakash200407/springboot_repository:latest .'
