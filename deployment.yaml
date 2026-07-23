@@ -19,7 +19,7 @@ spec:
         app: springboot
 
     spec:
-    containers:
+containers:
   - name: springboot
     image: prakash200407/springboot_repository:latest
 
